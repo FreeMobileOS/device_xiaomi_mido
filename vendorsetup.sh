@@ -13,4 +13,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-add_lunch_combo full_mido-userdebug
+
+# let's download msm8953 common reference
+if ! [ -d device/xiaomi/msm8953-common ]; then
+    git clone https://github.com/FreeMobileOS/msm8953-common.git --branch fmo-9 device/xiaomi/msm8953-common
+fi
+
+# let's download vendor blobs
+if ! [ -d vendor/xiaomi ]; then
+    git clone https://github.com/FreeMobileOS/proprietary_vendor_xiaomi.git --branch fmo-9 vendor/xiaomi
+fi
