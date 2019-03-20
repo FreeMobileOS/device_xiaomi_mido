@@ -21,5 +21,10 @@ fi
 
 # let's download vendor blobs
 if ! [ -d vendor/xiaomi ]; then
-    git clone https://github.com/FreeMobileOS/proprietary_vendor_xiaomi.git --branch fmo-9 vendor/xiaomi
+    git clone https://github.com/FreeMobileOS/proprietary_vendor_xiaomi.git --branch fmo-9 --depth 1 vendor/xiaomi
+fi
+
+# let's download kernel source
+if ! [ -d kernel/xiaomi/msm8953 ]; then
+    git clone https://github.com/FreeMobileOS/android_kernel_msm-3.18.git --branch fmo-8.1.0-mido-caf --depth 1 kernel/xiaomi/msm8953
 fi
